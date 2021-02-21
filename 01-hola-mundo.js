@@ -1,0 +1,2 @@
+alert ("HOLA MUNDO CON JAVASCRIPT");
+alert ("BIENVENIDO AL CURSO");
