@@ -23,3 +23,36 @@ c)la cantidad de producto de productos que se conservan a menos de 0 grados.
 d)el promedio del peso del peso de todos los productos 
 f)el peso maximo y el minimo.
 */
+ /*
+ 	al presionar el boton pedir numero hasta que el usuario quiera
+ 	mostrar maximo y el numero minimo ingresado
+ */
+var ingreseNumero
+var elMaximo;
+var elMinimo;
+var respuesta;
+
+respuesta="si"
+
+ingreseNumero=prompt("ingrese los numeros que quieras :");
+ingreseNumero=parseInt(ingreseNumero);
+
+while(respuesta=="si")
+{
+		if(ingreseNumero<elMinimo || ingreseNumero>elMaximo)
+		{
+			ingreseNumero=prompt("ingrese otro numero");
+			ingreseNumero=ingreseNumero+elMaximo;
+		}
+		else
+		{
+			if(ingreseNumero>elMinimo)
+			{
+				ingreseNumero=prompt("ingrese otro numero");
+				ingreseNumero= ingreseNumero + elMinimo;
+			}
+		}
+		respuesta=prompt("desea continuar ")
+}
+
+console.log(elMinimo);

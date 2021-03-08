@@ -11,4 +11,4 @@
  	listadoFrutas("Naranja" ,"manzana" ," sandia " ,"sandia ", "melon ","coco");
  		var frutas=["Naranja ", "Manzana "];
 	//parametro tipo SPREAD en un ARRAY
-	listadoFrutas(...fruta "Naranja" ,"manzana" ," sandia " ,"sandia ", "melon ","coco"); 
+	listadoFrutas(...frutas ,"Naranja" ,"manzana" ," sandia " ,"sandia ", "melon ","coco");
