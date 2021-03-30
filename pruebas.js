@@ -1,58 +1,66 @@
 "use strict"
+
 /*
-var usuario=0;
-var divisores=0;
+1. pide 6 numeros por pantalla y los meta en un array
+2. Mostrar el array entero(todos sus elementos)en el cuerpo de la pagina y la consola
+3. Ordenar y mostrar 
+4. Invertir sus orden Mostrarlo
+5. Mostrar cuantos elementos tiene el array
+6. Busqueda de un valor introducida por el usuario , que nos diga si lo encuentra y su indice 
+(se valorará el uso de funciones)
 
-usuario=parseint(prompt("introduce un numero " , 0));
+*/
+//PRIMER EJEMPLO
 
-for(var usuario=i; i < divisores /2; i++);{
-    if(usuario===0){
-        console.log("estos son todos los divisores " + i);
-    }
+/* var numeros = new Array(6); lr indico la cantidad de posiciones que quiero que tenga el array
+
+for(var i=0 ; i< 6 ; i++){
+	numeros[i] =parseInt(prompt("introduce un numero ",0));
 }
+consola.log(numeros);
 */
-/*
-Realizar el algoritmo que permita ingreso la marca del producto ,el peso
-el cual debe ser entre 1 y 100 (validar),
-la temperatura de almacenmiento(entre -30 y 30)hasta que el usuario quiera
-e informar al terminar el ingreso por document.write();
+//SEGUNDO EJEMPLO
+function mostrarArray(elementos,textoCustom=""){
 
-a)la cantidad de temperaturas pares.
-b)la marca del producto mas pesado.
-c)la cantidad de producto de productos que se conservan a menos de 0 grados.
-d)el promedio del peso del peso de todos los productos 
-f)el peso maximo y el minimo.
-*/
- /*
- 	al presionar el boton pedir numero hasta que el usuario quiera
- 	mostrar maximo y el numero minimo ingresado
- */
-var ingreseNumero
-var elMaximo;
-var elMinimo;
-var respuesta;
+	document.write("<h1> contenido de array "+textoCustom+"</h1>");
+	document.write("<ul>");
 
-respuesta="si"
-
-ingreseNumero=prompt("ingrese los numeros que quieras :");
-ingreseNumero=parseInt(ingreseNumero);
-
-while(respuesta=="si")
-{
-		if(ingreseNumero<elMinimo || ingreseNumero>elMaximo)
-		{
-			ingreseNumero=prompt("ingrese otro numero");
-			ingreseNumero=ingreseNumero+elMaximo;
-		}
-		else
-		{
-			if(ingreseNumero>elMinimo)
-			{
-				ingreseNumero=prompt("ingrese otro numero");
-				ingreseNumero= ingreseNumero + elMinimo;
-			}
-		}
-		respuesta=prompt("desea continuar ")
+	//funcion de callback
+	elementos.forEach((elementos,index)=>{
+	document.write("<li> "+elementos+"</li>");
+	});
+	document.write("</ul>");
 }
 
-console.log(elMinimo);
+
+var numeros =[];
+
+for (var i = 0 ; i <= 5 ; i++){
+	numeros.push(parseInt(prompt("introduce un numero ",0)));
+}
+
+mostrarArray(numeros);
+
+numeros.sort(function(a ,b){return a-b});
+
+console.log(numeros, "ordenado");
+mostrarArray(numeros, "ordenado");
+
+numeros.reverse();
+mostrarArray(numeros ,"invertido");
+
+document.write("<h1>El array tiene  "+ numeros.length +"Elementos");
+
+
+var  busquedad =parseInt(prompt("busca un elemnto" ,0));
+
+var posicion = numeros.findIndex(numero => numero == busquedad);
+
+if(posicion && posicion != -1){
+
+document.write("<h1>ENCONTRADO</h1>");
+document.write("<h1> Posicion de la busqueda: "+posicion+" </h1>");
+
+}else{
+	document.write("<h1>NO ENCONTRADO</h1>");
+}
